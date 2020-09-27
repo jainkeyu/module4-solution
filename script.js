@@ -23,7 +23,7 @@ const helloSpeaker = {
 //This says Hello
 (function () {
 	helloSpeaker.speak = function (userName) {
-		return (helloSpeaker.speakWord + " " + userName);
+		//return (helloSpeaker.speakWord + " " + userName);
 	}
 }());
 
@@ -36,7 +36,7 @@ const byeSpeaker = {
 
 (function () {
 	byeSpeaker.speak = function (userName) {
-		return (byeSpeaker.speakWord + " " + userName);
+		//return (byeSpeaker.speakWord + " " + userName);
 	}
 }());
 
