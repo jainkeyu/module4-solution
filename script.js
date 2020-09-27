@@ -111,7 +111,7 @@ const byeSpeaker = {
 //3
 //This choose the names
 (function () {
-	var names = ['Joey', 'Ross', 'Rachel', 'Jerry', 'Chandler', 'Monica', 'Phoebe', 'Pari', 'Sonu', 'Ted','Robin','Barney'];
+	var names = ['Yaakov', 'John', 'Jen', 'Jason', 'Paul', 'Frank', 'Larry', 'Paula', 'Laura', 'Jim'];
 	for (var i = 0; i < names.length; i++) {
 		var name = names[i];
 		var firstLetter = name.charAt(0).toLowerCase();
