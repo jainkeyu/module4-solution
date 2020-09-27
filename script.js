@@ -1,4 +1,4 @@
-(function() {
+//(function() {
   // *******************************
 // START HERE IF YOU WANT A MORE CHALLENGING STARTING POINT FOR THIS ASSIGNMENT
 // *******************************
@@ -33,14 +33,14 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 
-var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+//var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
 
 // STEP 10:
 // Loop over the names array and say either 'Hello' or "Good Bye"
 // using the 'speak' method or either helloSpeaker's or byeSpeaker's
 // 'speak' method.
 // See Lecture 50, part 1
-for (var i = 0; i < names.length; i++) {
+//for (var i = 0; i < names.length; i++) {
 
   // STEP 11:
   // Retrieve the first letter of the current name in the loop.
@@ -49,17 +49,78 @@ for (var i = 0; i < names.length; i++) {
   // string object's 'toLowerCase' method on the result so we can compare
   // to lower case character 'j' afterwards.
   // Look up these methods on Mozilla Developer Network web site if needed.
-  var firstLetter = names[i].charAt(0).toLowerCase();
+  //var firstLetter = names[i].charAt(0).toLowerCase();
 
   // STEP 12:
   // Compare the 'firstLetter' retrieved in STEP 11 to lower case
   // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
   // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
   // name in the loop.
-  if (firstLetter == "j") {
-    byeSpeaker.speak(names[i]);
-  } else {
-    helloSpeaker.speak(names[i]);
-  }
-}
+ // if (firstLetter == "j") {
+   // byeSpeaker.speak(names[i]);
+  //} else {
+  //  helloSpeaker.speak(names[i]);
+  //}
+//}
+//})();
+
+
+//1
+
+// The idea of this assignment is to take an existing array of names
+// and then output either Hello 'Name' or Good Bye 'Name' to the console.
+// The program should say "Hello" to any name except names that start with a "J"
+// or "j", otherwise, the program should say "Good Bye". So, the final output
+// on the console should look like this:
+/*
+Hello Yaakov
+Good Bye John
+Good Bye Jen
+Good Bye Jason
+Hello Paul
+Hello Frank
+Hello Larry
+Hello Paula
+Hello Laura
+Good Bye Jim*/
+
+/*Hello speaker function*/
+const helloSpeaker = {
+	speakWord: 'Hello',	
+};
+//This says Hello
+(function () {
+	helloSpeaker.speak = function (userName) {
+		return (helloSpeaker.speakWord + " " + userName);
+	}
+}());
+
+
+//2
+/*Goodbye speaker function*/
+const byeSpeaker = {
+	speakWord: 'Good Bye'
+};
+
+(function () {
+	byeSpeaker.speak = function (userName) {
+		return (byeSpeaker.speakWord + " " + userName);
+	}
+}());
+
+//3
+//This choose the names
+(function () {
+	var names = ['Yaakov', 'John', 'Jen', 'Jason', 'Paul', 'Frank', 'Larry', 'Paula', 'Laura', 'Jim'];
+	for (var i = 0; i < names.length; i++) {
+		var name = names[i];
+		var firstLetter = name.charAt(0).toLowerCase();
+		if (firstLetter === 'j') {
+			console.log(byeSpeaker.speak(name));
+			document.write(byeSpeaker.speak(name) + '<br>');
+		} else {
+			console.log(helloSpeaker.speak(name));
+			document.write(helloSpeaker.speak(name + '<br>'));
+		}
+	}
 })();
